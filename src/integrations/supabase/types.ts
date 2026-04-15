@@ -14,7 +14,141 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      investments: {
+        Row: {
+          asset_name: string
+          asset_symbol: string
+          asset_type: string
+          current_price: number
+          date_added: string
+          id: string
+          profit_loss: number | null
+          purchase_price: number
+          quantity: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          asset_name: string
+          asset_symbol: string
+          asset_type?: string
+          current_price?: number
+          date_added?: string
+          id?: string
+          profit_loss?: number | null
+          purchase_price: number
+          quantity: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          asset_name?: string
+          asset_symbol?: string
+          asset_type?: string
+          current_price?: number
+          date_added?: string
+          id?: string
+          profit_loss?: number | null
+          purchase_price?: number
+          quantity?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string
+          id: string
+          is_read: boolean
+          message: string
+          metadata: Json | null
+          title: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          message: string
+          metadata?: Json | null
+          title: string
+          type?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          message?: string
+          metadata?: Json | null
+          title?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      price_alerts: {
+        Row: {
+          asset_name: string
+          asset_symbol: string
+          condition: string
+          created_at: string
+          id: string
+          is_triggered: boolean
+          target_price: number
+          user_id: string
+        }
+        Insert: {
+          asset_name: string
+          asset_symbol: string
+          condition?: string
+          created_at?: string
+          id?: string
+          is_triggered?: boolean
+          target_price: number
+          user_id: string
+        }
+        Update: {
+          asset_name?: string
+          asset_symbol?: string
+          condition?: string
+          created_at?: string
+          id?: string
+          is_triggered?: boolean
+          target_price?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
